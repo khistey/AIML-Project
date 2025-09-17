@@ -1,6 +1,6 @@
-# 🤖 AI/ML Intern Website with Gemini AI
+# 🤖 AIML-Project - AI/ML Intern Website with Gemini AI
 
-A modern, full-stack web application for AI/ML internship recruitment, powered by Google's Gemini AI for intelligent features.
+A comprehensive AI/ML project repository featuring a modern, full-stack web application for AI/ML internship recruitment, powered by Google's Gemini AI for intelligent features.
 
 ![AI/ML Intern Website](https://img.shields.io/badge/AI%2FML-Intern%20Website-blue)
 ![React](https://img.shields.io/badge/React-18.3.1-blue)
@@ -247,4 +247,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Made with ❤️ for the future of AI/ML education and recruitment.**
 
-[⭐ Star this repo](https://github.com/yourusername/ai-ml-intern-website) if you found it helpful!
+# AIML-Project
+This is my AI microservice platform
+>>>>>>> b4519c2f4acc04135f558aadb71681bb799b998e
+[⭐ Star this repo](https://github.com/khistey/AIML-Project) if you found it helpful!
+=======
+# AIML-Project
+This is my AI microservice platform
+>>>>>>> b4519c2f4acc04135f558aadb71681bb799b998e

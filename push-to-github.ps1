@@ -110,8 +110,8 @@ try {
     Write-Host ""
     Write-Host "🎉 Successfully pushed to GitHub!" -ForegroundColor Green
     Write-Host ""
-    Write-Host "📍 Your repository: https://github.com/khistey/ai-ml-intern-website" -ForegroundColor Cyan
-    Write-Host "📱 View on GitHub: https://github.com/khistey/ai-ml-intern-website" -ForegroundColor Cyan
+    Write-Host "📍 Your repository: https://github.com/khistey/AIML-Project" -ForegroundColor Cyan
+    Write-Host "📱 View on GitHub: https://github.com/khistey/AIML-Project" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "✨ Latest commits:" -ForegroundColor Yellow
     git log --oneline -3
