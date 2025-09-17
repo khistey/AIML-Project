@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML + Flowise Intern Position</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #667eea;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.5rem;
+        }
+
+        .nav a:hover {
+            color: #667eea;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #f0f0f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: #667eea;
+        }
+
+        .section {
+            padding: 4rem 0;
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .tech-icon {
+            width: 80px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .tech-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .apply-section {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .apply-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .apply-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .demo-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            margin: 2rem 0;
+            border-radius: 20px;
+        }
+
+        .demo-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .demo-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .demo-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .demo-card h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .demo-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        .input-group input,
+        .input-group textarea,
+        .input-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .input-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .file-upload {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px dashed rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .file-upload:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .file-upload input[type="file"] {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .demo-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .demo-button:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+
+        .demo-button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .result-area {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            min-height: 100px;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .loading {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-style: italic;
+        }
+
+        .path-step {
+            background: rgba(255, 255, 255, 0.1);
+            margin: 0.5rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .path-step h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .path-step p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav {
+                gap: 1rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tech-icons {
+                gap: 1rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">AI/ML Internship</div>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="#responsibilities">Responsibilities</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#technologies">Technologies</a></li>
+                        <li><a href="#demos">AI Demos</a></li>
+                        <li><a href="#apply">Apply</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>AI/ML + Flowise Intern</h1>
+            <p>Join our team and work on cutting-edge AI/ML technologies with Flowise and intelligent automation</p>
+            <a href="#apply" class="cta-button">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Technology Icons -->
+    <section class="container">
+        <div class="tech-icons">
+            <div class="tech-icon">AI/ML</div>
+            <div class="tech-icon">Flowise</div>
+            <div class="tech-icon">PyTorch</div>
+            <div class="tech-icon">TensorFlow</div>
+            <div class="tech-icon">LangChain</div>
+            <div class="tech-icon">RAG</div>
+            <div class="tech-icon">SSO</div>
+            <div class="tech-icon">OAuth</div>
+        </div>
+    </section>
+
+    <!-- Responsibilities Section -->
+    <section id="responsibilities" class="section">
+        <div class="container">
+            <h2>Key Responsibilities</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>🤖 AI Agent Development</h3>
+                    <p>Build and integrate AI agents using Flowise or similar frameworks to create intelligent automation solutions</p>
+                </div>
+                <div class="card">
+                    <h3>🧠 AI/ML Implementation</h3>
+                    <p>Work on AI/ML use cases to embed intelligent features into the platform and enhance user experience</p>
+                </div>
+                <div class="card">
+                    <h3>🔐 SSO Integration</h3>
+                    <p>Implement and manage Single Sign-On (SSO) solutions for seamless user authentication across platforms</p>
+                </div>
+                <div class="card">
+                    <h3>🔗 API Integration</h3>
+                    <p>Collaborate with developers for AI/ML API/model integrations and ensure smooth data flow</p>
+                </div>
+                <div class="card">
+                    <h3>📚 Documentation</h3>
+                    <p>Contribute to documentation and research of AI-powered functionalities for knowledge sharing</p>
+                </div>
+                <div class="card">
+                    <h3>🚀 Production Implementation</h3>
+                    <p>Apply cutting-edge technologies in production environments with focus on scalability and performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Required & Preferred Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>🎯 Core Requirements</h3>
+                    <ul class="skill-list">
+                        <li>Strong ML & DL fundamentals</li>
+                        <li>TensorFlow, PyTorch, LangChain</li>
+                        <li>Flowise & RAG understanding</li>
+                        <li>SSO protocols (OAuth, OpenID)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>💻 Technical Skills</h3>
+                    <ul class="skill-list">
+                        <li>API integration experience</li>
+                        <li>Data preprocessing</li>
+                        <li>Production AI applications</li>
+                        <li>Conversational AI agents</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>🌟 Preferred Experience</h3>
+                    <ul class="skill-list">
+                        <li>AI/ML project portfolio</li>
+                        <li>GitHub contributions</li>
+                        <li>Production deployment</li>
+                        <li>Research publications</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>🚀 Personal Qualities</h3>
+                    <ul class="skill-list">
+                        <li>Eagerness to learn</li>
+                        <li>Problem-solving mindset</li>
+                        <li>Team collaboration</li>
+                        <li>Innovation focus</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="section">
+        <div class="container">
+            <h2>Technologies You'll Work With</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>🔮 Flowise</h3>
+                    <p>Low-code platform for building AI agents and chatbots with visual workflow design and easy integration capabilities</p>
+                </div>
+                <div class="card">
+                    <h3>🧠 LangChain</h3>
+                    <p>Framework for developing applications powered by language models with advanced chain-of-thought reasoning</p>
+                </div>
+                <div class="card">
+                    <h3>🔍 RAG Systems</h3>
+                    <p>Retrieval-Augmented Generation for building AI systems that can access and use external knowledge bases</p>
+                </div>
+                <div class="card">
+                    <h3>🤖 TensorFlow/PyTorch</h3>
+                    <p>Deep learning frameworks for building, training, and deploying machine learning models at scale</p>
+                </div>
+                <div class="card">
+                    <h3>🔐 OAuth & SSO</h3>
+                    <p>Modern authentication protocols for secure user access management and seamless login experiences</p>
+                </div>
+                <div class="card">
+                    <h3>☁️ Production AI</h3>
+                    <p>Real-world deployment of AI models with monitoring, scaling, and performance optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Demos Section -->
+    <section id="demos" class="demo-section">
+        <div class="container">
+            <h2>🚀 Experience Our AI Technologies</h2>
+            <p style="text-align: center; margin-bottom: 3rem; opacity: 0.9;">Try out the AI/ML technologies you'll be working with as an intern</p>
+            
+            <div class="demo-cards">
+                <!-- Text Summarization Demo -->
+                <div class="demo-card">
+                    <h3>📝 Text Summarization</h3>
+                    <p>Experience AI-powered text summarization using advanced NLP models</p>
+                    
+                    <div class="input-group">
+                        <label for="text-input">Enter text to summarize:</label>
+                        <textarea id="text-input" placeholder="Paste your text here (minimum 100 characters)..."></textarea>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="summary-length">Summary length:</label>
+                        <select id="summary-length">
+                            <option value="short">Short (1-2 sentences)</option>
+                            <option value="medium" selected>Medium (3-4 sentences)</option>
+                            <option value="long">Long (5-6 sentences)</option>
+                        </select>
+                    </div>
+                    
+                    <button class="demo-button" onclick="summarizeText()">Generate Summary</button>
+                    
+                    <div id="summary-result" class="result-area">
+                        <em>Your AI-generated summary will appear here...</em>
+                    </div>
+                </div>
+
+                <!-- Document Q&A Demo -->
+                <div class="demo-card">
+                    <h3>❓ Document Q&A</h3>
+                    <p>Upload a document and ask questions about its content using RAG technology</p>
+                    
+                    <div class="input-group">
+                        <label>Upload Document (PDF, TXT, DOCX):</label>
+                        <div class="file-upload">
+                            <input type="file" id="document-upload" accept=".pdf,.txt,.docx" onchange="handleFileUpload(event)">
+                            <div id="upload-text">
+                                📄 Click to upload or drag & drop<br>
+                                <small>Supported: PDF, TXT, DOCX (max 10MB)</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="question-input">Ask a question about your document:</label>
+                        <input type="text" id="question-input" placeholder="What is the main topic of this document?" disabled>
+                    </div>
+                    
+                    <button class="demo-button" id="qa-button" onclick="askQuestion()" disabled>Ask Question</button>
+                    
+                    <div id="qa-result" class="result-area">
+                        <em>Upload a document first, then ask questions about its content...</em>
+                    </div>
+                </div>
+
+                <!-- Learning Path Generator Demo -->
+                <div class="demo-card">
+                    <h3>🎯 Learning Path Generator</h3>
+                    <p>Get a personalized AI/ML learning roadmap based on your interests and goals</p>
+                    
+                    <div class="input-group">
+                        <label for="interest-select">Choose your AI/ML interest:</label>
+                        <select id="interest-select">
+                            <option value="">Select your focus area...</option>
+                            <option value="machine-learning">Machine Learning</option>
+                            <option value="deep-learning">Deep Learning</option>
+                            <option value="nlp">Natural Language Processing</option>
+                            <option value="computer-vision">Computer Vision</option>
+                            <option value="reinforcement-learning">Reinforcement Learning</option>
+                            <option value="mlops">MLOps & Production</option>
+                            <option value="ai-ethics">AI Ethics & Fairness</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="experience-level">Your current level:</label>
+                        <select id="experience-level">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="timeline">Learning timeline:</label>
+                        <select id="timeline">
+                            <option value="3-months">3 months</option>
+                            <option value="6-months">6 months</option>
+                            <option value="1-year">1 year</option>
+                        </select>
+                    </div>
+                    
+                    <button class="demo-button" onclick="generatePath()">Generate Learning Path</button>
+                    
+                    <div id="path-result" class="result-area">
+                        <em>Your personalized learning path will be generated here...</em>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Section -->
+    <section id="apply" class="section">
+        <div class="container">
+            <h2>Ready to Join Our Team?</h2>
+            <div class="apply-section">
+                <p>
+                    We're looking for passionate individuals who want to work at the forefront of AI/ML technology. 
+                    If you're excited about building intelligent systems and have the skills we're looking for, we'd love to hear from you!
+                </p>
+                <div class="apply-buttons">
+                    <a href="mailto:careers@company.com" class="cta-button">Send Resume</a>
+                    <a href="#" class="cta-button secondary">View Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AI/ML Internship Program. Building the future with artificial intelligence.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.card, .skill-category').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // AI Demo Functions
+        
+        // Text Summarization
+        function summarizeText() {
+            const textInput = document.getElementById('text-input');
+            const summaryLength = document.getElementById('summary-length');
+            const resultDiv = document.getElementById('summary-result');
+            
+            const text = textInput.value.trim();
+            
+            if (text.length < 100) {
+                resultDiv.innerHTML = '<span style="color: #ff6b6b;">Please enter at least 100 characters of text to summarize.</span>';
+                return;
+            }
+            
+            resultDiv.innerHTML = '<div class="loading">🤖 AI is analyzing your text...</div>';
+            
+            // Simulate AI processing
+            setTimeout(() => {
+                const summaries = {
+                    'short': generateShortSummary(text),
+                    'medium': generateMediumSummary(text),
+                    'long': generateLongSummary(text)
+                };
+                
+                resultDiv.innerHTML = `
+                    <strong>AI-Generated Summary (${summaryLength.value}):</strong><br><br>
+                    ${summaries[summaryLength.value]}
+                    <br><br>
+                    <small style="opacity: 0.8;">💡 This demo uses simulated AI processing. In production, this would connect to models like GPT, BERT, or T5.</small>
+                `;
+            }, 2000);
+        }
+        
+        function generateShortSummary(text) {
+            const sentences = text.split('.').filter(s => s.trim().length > 10);
+            return sentences.slice(0, 2).join('.') + '.';
+        }
+        
+        function generateMediumSummary(text) {
+            const words = text.split(' ');
+            const keyTerms = extractKeyTerms(text);
+            return `This text discusses ${keyTerms.join(', ')} among other topics. The content appears to focus on ${words.slice(0, 15).join(' ')}... and provides insights into the subject matter. Key concepts include technical implementations and practical applications.`;
+        }
+        
+        function generateLongSummary(text) {
+            const words = text.split(' ');
+            return `The provided text contains ${words.length} words and covers multiple aspects of the topic. It begins by introducing the main concepts and gradually builds upon foundational ideas. The content demonstrates a comprehensive approach to the subject matter, incorporating both theoretical frameworks and practical applications. Throughout the text, there are references to various methodologies and implementations that showcase the breadth of the topic. The overall structure suggests a well-organized presentation of information that would be valuable for both beginners and advanced practitioners.`;
+        }
+        
+        function extractKeyTerms(text) {
+            const commonWords = ['the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can', 'must', 'shall', 'a', 'an', 'this', 'that', 'these', 'those'];
+            const words = text.toLowerCase().replace(/[^\w\s]/g, '').split(' ');
+            const wordCount = {};
+            
+            words.forEach(word => {
+                if (word.length > 3 && !commonWords.includes(word)) {
+                    wordCount[word] = (wordCount[word] || 0) + 1;
+                }
+            });
+            
+            return Object.keys(wordCount)
+                .sort((a, b) => wordCount[b] - wordCount[a])
+                .slice(0, 3);
+        }
+        
+        // Document Q&A
+        let uploadedDocument = null;
+        
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            const uploadText = document.getElementById('upload-text');
+            const questionInput = document.getElementById('question-input');
+            const qaButton = document.getElementById('qa-button');
+            
+            if (file) {
+                if (file.size > 10 * 1024 * 1024) { // 10MB limit
+                    uploadText.innerHTML = '<span style="color: #ff6b6b;">File too large. Please upload a file smaller than 10MB.</span>';
+                    return;
+                }
+                
+                uploadedDocument = file;
+                uploadText.innerHTML = `
+                    ✅ Document uploaded: <strong>${file.name}</strong><br>
+                    <small>Size: ${(file.size / 1024).toFixed(1)} KB | Type: ${file.type || 'Unknown'}</small>
+                `;
+                
+                questionInput.disabled = false;
+                qaButton.disabled = false;
+                
+                // Simulate document processing
+                document.getElementById('qa-result').innerHTML = `
+                    <div class="loading">📖 Processing document: ${file.name}...</div>
+                `;
+                
+                setTimeout(() => {
+                    document.getElementById('qa-result').innerHTML = `
+                        <strong>Document Processed Successfully!</strong><br><br>
+                        📄 <strong>Document:</strong> ${file.name}<br>
+                        📊 <strong>Estimated content:</strong> ${Math.floor(file.size / 5)} words<br>
+                        🔍 <strong>Status:</strong> Ready for questions<br><br>
+                        <em>You can now ask questions about this document...</em>
+                    `;
+                }, 1500);
+            }
+        }
+        
+        function askQuestion() {
+            const questionInput = document.getElementById('question-input');
+            const resultDiv = document.getElementById('qa-result');
+            
+            const question = questionInput.value.trim();
+            
+            if (!question) {
+                resultDiv.innerHTML = '<span style="color: #ff6b6b;">Please enter a question about your document.</span>';
+                return;
+            }
+            
+            resultDiv.innerHTML = '<div class="loading">🤖 RAG system is analyzing your document and generating an answer...</div>';
+            
+            // Simulate RAG processing
+            setTimeout(() => {
+                const answer = generateDocumentAnswer(question, uploadedDocument.name);
+                resultDiv.innerHTML = `
+                    <strong>Question:</strong> ${question}<br><br>
+                    <strong>AI Answer:</strong><br>
+                    ${answer}<br><br>
+                    <small style="opacity: 0.8;">💡 This demo simulates RAG (Retrieval-Augmented Generation). In production, this would use vector embeddings and semantic search through your document.</small>
+                `;
+                
+                questionInput.value = '';
+            }, 3000);
+        }
+        
+        function generateDocumentAnswer(question, filename) {
+            const questionLower = question.toLowerCase();
+            
+            if (questionLower.includes('main topic') || questionLower.includes('about')) {
+                return `Based on the analysis of "${filename}", the document appears to cover technical content related to AI/ML concepts. The main topics likely include implementation details, theoretical frameworks, and practical applications relevant to the field.`;
+            } else if (questionLower.includes('summary') || questionLower.includes('summarize')) {
+                return `The document "${filename}" contains structured information that follows a logical progression from foundational concepts to advanced implementations. It includes detailed explanations and practical examples that demonstrate real-world applications.`;
+            } else if (questionLower.includes('key points') || questionLower.includes('important')) {
+                return `Key points from "${filename}" include: 1) Foundational concepts and terminology, 2) Implementation strategies and best practices, 3) Technical requirements and considerations, 4) Practical examples and use cases, 5) Future directions and recommendations.`;
+            } else {
+                return `Regarding your question about "${question}", the document "${filename}" provides relevant information that addresses this topic through detailed explanations and contextual examples. The content suggests a comprehensive approach to understanding the subject matter with practical applications and theoretical backing.`;
+            }
+        }
+        
+        // Learning Path Generator
+        function generatePath() {
+            const interest = document.getElementById('interest-select').value;
+            const level = document.getElementById('experience-level').value;
+            const timeline = document.getElementById('timeline').value;
+            const resultDiv = document.getElementById('path-result');
+            
+            if (!interest) {
+                resultDiv.innerHTML = '<span style="color: #ff6b6b;">Please select your AI/ML interest area.</span>';
+                return;
+            }
+            
+            resultDiv.innerHTML = '<div class="loading">🎯 AI is generating your personalized learning path...</div>';
+            
+            // Simulate AI processing
+            setTimeout(() => {
+                const path = generateLearningPath(interest, level, timeline);
+                resultDiv.innerHTML = path;
+            }, 2500);
+        }
+        
+        function generateLearningPath(interest, level, timeline) {
+            const paths = {
+                'machine-learning': {
+                    title: 'Machine Learning Mastery Path',
+                    description: 'Comprehensive journey from fundamentals to advanced ML applications',
+                    steps: [
+                        { title: 'Mathematics Foundation', desc: 'Linear algebra, statistics, calculus' },
+                        { title: 'Python & Libraries', desc: 'NumPy, Pandas, Scikit-learn' },
+                        { title: 'ML Algorithms', desc: 'Supervised, unsupervised, ensemble methods' },
+                        { title: 'Model Evaluation', desc: 'Cross-validation, metrics, hyperparameter tuning' },
+                        { title: 'Advanced Topics', desc: 'Feature engineering, model selection, deployment' }
+                    ]
+                },
+                'deep-learning': {
+                    title: 'Deep Learning Specialist Path',
+                    description: 'Master neural networks and advanced deep learning architectures',
+                    steps: [
+                        { title: 'Neural Network Basics', desc: 'Perceptrons, backpropagation, activation functions' },
+                        { title: 'Deep Learning Frameworks', desc: 'TensorFlow, PyTorch, Keras' },
+                        { title: 'CNN & Computer Vision', desc: 'Image processing, object detection' },
+                        { title: 'RNN & NLP', desc: 'Sequence models, transformers, attention mechanisms' },
+                        { title: 'Advanced Architectures', desc: 'GANs, autoencoders, transfer learning' }
+                    ]
+                },
+                'nlp': {
+                    title: 'Natural Language Processing Expert Path',
+                    description: 'From text processing to advanced language models',
+                    steps: [
+                        { title: 'Text Preprocessing', desc: 'Tokenization, stemming, lemmatization' },
+                        { title: 'Classical NLP', desc: 'TF-IDF, N-grams, named entity recognition' },
+                        { title: 'Word Embeddings', desc: 'Word2Vec, GloVe, FastText' },
+                        { title: 'Transformers', desc: 'BERT, GPT, attention mechanisms' },
+                        { title: 'Advanced Applications', desc: 'Question answering, text generation, sentiment analysis' }
+                    ]
+                },
+                'computer-vision': {
+                    title: 'Computer Vision Specialist Path',
+                    description: 'Master image processing and visual recognition systems',
+                    steps: [
+                        { title: 'Image Fundamentals', desc: 'Digital images, filters, feature extraction' },
+                        { title: 'Classical CV', desc: 'Edge detection, corner detection, optical flow' },
+                        { title: 'Deep Learning for CV', desc: 'CNNs, pooling, batch normalization' },
+                        { title: 'Object Detection', desc: 'YOLO, R-CNN, semantic segmentation' },
+                        { title: 'Advanced Topics', desc: 'Style transfer, GANs, 3D vision' }
+                    ]
+                }
+            };
+            
+            const defaultPath = {
+                title: 'AI/ML Foundation Path',
+                description: 'Comprehensive introduction to artificial intelligence and machine learning',
+                steps: [
+                    { title: 'AI/ML Fundamentals', desc: 'Introduction to AI concepts and applications' },
+                    { title: 'Programming Skills', desc: 'Python, data structures, algorithms' },
+                    { title: 'Data Science Basics', desc: 'Data analysis, visualization, statistics' },
+                    { title: 'Machine Learning', desc: 'Supervised and unsupervised learning' },
+                    { title: 'Practical Projects', desc: 'Real-world applications and portfolio building' }
+                ]
+            };
+            
+            const selectedPath = paths[interest] || defaultPath;
+            const timelineText = timeline.replace('-', ' ');
+            
+            let html = `
+                <strong>🎯 ${selectedPath.title}</strong><br>
+                <em>${selectedPath.description}</em><br><br>
+                <strong>📅 Timeline:</strong> ${timelineText} (${level} level)<br><br>
+                <strong>📚 Learning Steps:</strong><br>
+            `;
+            
+            selectedPath.steps.forEach((step, index) => {
+                html += `
+                    <div class="path-step">
+                        <h4>Step ${index + 1}: ${step.title}</h4>
+                        <p>${step.desc}</p>
+                    </div>
+                `;
+            });
+            
+            html += `
+                <br>
+                <strong>💡 Recommended Resources:</strong><br>
+                • Coursera ML Course, Fast.ai, edX AI courses<br>
+                • Books: "Hands-On ML" by Aurélien Géron<br>
+                • Practice: Kaggle competitions, GitHub projects<br><br>
+                <small style="opacity: 0.8;">🚀 This personalized path is generated based on your preferences. Adjust pace according to your schedule!</small>
+            `;
+            
+            return html;
+        }
+    </script>
+</body>
+</html>
